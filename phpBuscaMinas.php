@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_GET['showsource'])) {
-   show_source('index.php');
+   show_source($_SERVER['PHP_SELF']);
    exit;
 }
 
@@ -530,8 +530,8 @@ else
   <br /><br />
   <input type="submit" value="Nuevo Juego" />
   <br /><br />
-  <input type="button" onclick="window.open('buscaminas.php?guardar_partida', '_self')" value="Guardar Partida" />
-  <input type="button" onclick="window.open('buscaminas.php?cargar_partida', '_self')" value="Cargar Partida" />
+  <input type="button" onclick="window.open('<?php echo $_SERVER['PHP_SELF']; ?>?guardar_partida', '_self')" value="Guardar Partida" />
+  <input type="button" onclick="window.open('<?php echo $_SERVER['PHP_SELF']; ?>?cargar_partida', '_self')" value="Cargar Partida" />
 </form>
 </fieldset>
 </td></tr></table>
